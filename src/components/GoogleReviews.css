@@ -1,0 +1,88 @@
+.reviews-container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Title */
+.reviews-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff5e9c, #5eb8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 15px;
+}
+
+/* Wrapper for review + buttons */
+.review-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Review Card */
+.review-card {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s ease;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+}
+
+/* Avatar */
+.review-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Review Text */
+.review-text {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Star Rating */
+.rating {
+  font-size: 30px;
+  color: gold;
+}
+
+/* Buttons beside card */
+.prevbtn,
+.nextbtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black; /* Black symbol */
+  border: none;
+  background: none; /* Remove background */
+  font-size: 28px;
+  cursor: pointer;
+  transition: font-size 0.3s ease;
+  z-index: 2;
+}
+
+/* Left Button */
+.prevbtn {
+  left: -35px; /* Adjusted for better view on all screens */
+}
+
+/* Right Button */
+.nextbtn {
+  right: -35px;
+}
+
+/* Hover effect: only increase size */
+.prevbtn:hover,
+.nextbtn:hover {
+  font-size: 36px;
+}

@@ -1,0 +1,223 @@
+/* Navbar Container */
+.navbar {
+  background: white; /* Set background color to white */
+  padding: 15px 20px; /* Padding around navbar content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1050; /* High z-index to stay above other elements */
+}
+
+/* Space for fixed navbar to avoid overlap */
+body {
+  padding-top: 80px; /* Push body content below the fixed navbar */
+}
+
+/* Flex container for navbar content */
+.container {
+  display: flex; /* Flex layout */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between logo and nav links */
+  max-width: 1400px; /* Maximum width */
+  margin: auto; /* Center horizontally */
+  width: 100%;
+  flex-wrap: nowrap; /* No wrapping of content */
+}
+
+/* Logo Styling */
+.logo img {
+  height: 50px; /* Set height of logo */
+}
+
+/* Main Nav Links Container */
+.nav-links {
+  display: flex; /* Flex layout */
+  align-items: center; /* Align items vertically */
+  gap: 15px; /* Gap between links */
+  flex-grow: 1; /* Take remaining space */
+  justify-content: center; /* Center nav links */
+}
+
+/* Individual Nav Links and Dropdown Buttons */
+.nav-links a,
+.dropbtn {
+  text-decoration: none; /* Remove underline */
+  color: #54007b; /* Purple text */
+  padding: 10px 15px; /* Padding inside buttons */
+  font-size: 16px;
+  border-radius: 5px; /* Rounded corners */
+  background: transparent;
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: bold;
+  transition: background 0.4s ease, color 0.4s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect for Links and Buttons */
+.nav-links a:hover,
+.dropbtn:hover {
+  background-color: #54007b; /* Purple background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative; /* Relative to position dropdown content */
+}
+
+/* Dropdown Content Styling */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background: white; /* White background */
+  min-width: 180px; /* Minimum width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1100; /* Above main navbar */
+  top: 40px; /* Position below the dropdown button */
+}
+
+/* Individual Links in Dropdown */
+.dropdown-content a {
+  display: block; /* Block layout */
+  padding: 10px; /* Padding inside */
+  color: black;
+  text-align: left; /* Align text to the left */
+}
+
+/* Hover Effect for Dropdown Links */
+.dropdown-content a:hover {
+  background-color: #54007b; /* Purple on hover */
+  color: white; /* White text */
+}
+
+/* Show Dropdown on Hover or When 'show' Class is Present */
+.dropdown:hover .dropdown-content,
+.dropdown-content.show {
+  display: block; /* Show the dropdown content */
+}
+
+/* Right Section (Buttons on Right Side of Navbar) */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Gap between buttons */
+}
+
+/* General Button Styling */
+.btns {
+  border: 2px solid #54007b; /* Purple border */
+  color: #54007b; /* Purple text */
+  background: rgba(242, 242, 242, 0.06); /* Transparent background */
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Hover Styling for General Buttons */
+.btns:hover {
+  background-color: #54007b; /* Purple background */
+  color: white; /* White text */
+}
+
+/* Emergency Button Styling */
+#emergency {
+  border: 1px solid red; /* Red border */
+  color: white; /* White text */
+  background: red; /* Red background */
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect for Emergency Button */
+#emergency:hover {
+  background-color: #54007b; /* Turn purple on hover */
+  color: white;
+}
+
+/* Hamburger Menu Icon Styling */
+.menu-icon {
+  font-size: 25px; /* Icon size */
+  display: none; /* Hidden by default (shown on small screens) */
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+
+/* Responsive Styling for Screens ≤ 992px */
+@media (max-width: 992px) {
+  .container {
+    flex-wrap: wrap; /* Wrap contents */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    position: absolute;
+    top: 70px; /* Below the navbar */
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* Show nav-links when menu is active (via JS class toggle) */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Bottom Mobile Nav (Fixed Footer for Mobile) */
+.bottom-mobile-nav {
+  display: none; /* Hidden by default */
+}
+
+/* Show bottom nav on small screens only */
+@media (max-width: 768px) {
+  .bottom-mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Top shadow */
+    z-index: 1050;
+  }
+
+  .bottom-mobile-nav button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #54007b;
+    font-weight: bold;
+  }
+
+  .bottom-mobile-nav button:hover {
+    color: red;
+  }
+
+  /* Adjust body padding for bottom nav */
+  body {
+    padding-bottom: 70px; /* Prevent overlap with bottom navbar */
+  }
+}

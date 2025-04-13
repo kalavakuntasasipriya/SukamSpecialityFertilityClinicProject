@@ -1,0 +1,152 @@
+/* Page container */
+.appointment-page {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative; /* Ensures positioning of the Go Back button */
+}
+
+/* Go Back Button */
+.go-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #3c6da0;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.go-back:hover {
+  text-decoration: underline;
+}
+
+/* Page title */
+.appointment-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Doctor cards container */
+.doctor-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjusted spacing between cards */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Doctor Card */
+.doctor-card {
+  flex: 1 1 320px;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Doctor Image */
+.doctor-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Doctor Name & Info */
+.doctor-card h3 {
+  font-size: 20px;
+  margin: 10px 0 4px;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+/* Buttons Container */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Profile & Book Buttons */
+.profile-btn,
+.book-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* See Profile Button */
+.profile-btn {
+  background-color: #0b6330;
+  color: #fff;
+}
+
+.profile-btn:hover {
+  background-color: #133097;
+}
+
+/* Book Now Button */
+.book-btn {
+  background-color: #C2185B;
+  color: white;
+}
+
+.book-btn:hover {
+  background-color: #133097;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctor-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .go-back {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .profile-btn,
+  .book-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}

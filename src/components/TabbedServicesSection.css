@@ -1,0 +1,222 @@
+/* Tabbed Services Section */
+.services-section-tabbed {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .services-section-tabbed h2 {
+    font-size: 32px;
+    color: #c2185b;
+    margin-bottom: 20px;
+  }
+  
+  /* Tabs */
+  .service-tabs-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .service-tabs-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .service-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .service-tab {
+    flex: 0 0 auto;
+    min-width: 160px;
+    padding: 8px 12px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .service-tab.active {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .service-tab:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Card Layout */
+  .tabbed-service-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid #0071BC;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 960px;
+    margin: 0 auto 30px;
+    gap: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tabbed-service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 280px;
+  }
+  
+  .explore-services-image-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 6px;
+    background: linear-gradient(135deg, #b625b1, #00e0ff);
+  }
+  
+  .explore-services-image {
+    display: block;
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+  }
+  
+  /* Right Side Content */
+  .card-right {
+    flex: 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .card-right h3 {
+    font-size: 22px;
+    color: #c2185b;
+    margin-bottom: 5px;
+  }
+  
+  .card-right p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Buttons */
+  .card-buttons {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .card-buttons a {
+    min-width: 130px;
+    text-align: center;
+  }
+  
+  .explore-btn,
+  .find-btn {
+    background-color: #ff80ab;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 500;
+  }
+  
+  .explore-btn:hover,
+  .find-btn:hover {
+    background-color: #e91e63;
+    transform: translateY(-2px);
+  }
+  
+  /* Arrows */
+  .arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.2);
+  }
+  
+  .arrow-icon {
+    font-size: 24px;
+    color: #0071BC;
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow:hover .arrow-icon {
+    transform: scale(1.2);
+    color: #005f99;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .tabbed-service-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .card-left {
+      max-width: 100%;
+    }
+  
+    .card-right {
+      text-align: center;
+      align-items: center;
+    }
+  
+    .card-buttons {
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .services-section-tabbed h2 {
+      font-size: 26px;
+    }
+  
+    .service-tab {
+      min-width: 120px;
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  
+    .arrow-icon {
+      font-size: 20px;
+    }
+  
+    .explore-btn,
+    .find-btn {
+      font-size: 14px;
+      padding: 7px 12px;
+    }
+  }
+  

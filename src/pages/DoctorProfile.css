@@ -1,0 +1,161 @@
+/* Go Back Button - Positioned Correctly */
+.go-back-container {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.go-back-button {
+    display: inline-block;
+    background-color: #3169a6;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.go-back-button:hover {
+    background-color: #376596;
+}
+
+/* Main Profile Container */
+.doctor-profile {
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Profile Header */
+.profile-header {
+    position: relative;
+    padding-top: 100px;
+}
+
+/* Doctor Image */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor Name */
+h2 {
+    font-size: 26px;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+/* Qualifications & Designation */
+.qualification,
+.designation {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Medical Registration Number & Languages */
+.reg-number,
+.languages {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.call-button,
+.book-button {
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Call Button */
+.call-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.call-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Book Button */
+.book-button {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.book-button:hover {
+    background-color: #219150;
+    transform: scale(1.05);
+}
+
+/* About the Doctor Section */
+.about-doctor {
+    margin-top: 30px;
+    text-align: left;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.about-doctor h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.about-doctor p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .doctor-profile {
+        padding: 15px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        top: -75px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .call-button,
+    .book-button {
+        width: 100%;
+    }
+}

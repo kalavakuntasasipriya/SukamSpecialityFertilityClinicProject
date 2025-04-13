@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SukamSpecialityFertilityClinicProject/static/css/main.aa99ef8d.css",
-    "main.js": "/SukamSpecialityFertilityClinicProject/static/js/main.c42e3182.js",
+    "main.css": "/SukamSpecialityFertilityClinicProject/static/css/main.ed1c01bb.css",
+    "main.js": "/SukamSpecialityFertilityClinicProject/static/js/main.fde26b0c.js",
     "static/js/453.82e37217.chunk.js": "/SukamSpecialityFertilityClinicProject/static/js/453.82e37217.chunk.js",
     "static/media/gallery8.png": "/SukamSpecialityFertilityClinicProject/static/media/gallery8.5b3caa83482616ceda98.png",
     "static/media/gallery5.png": "/SukamSpecialityFertilityClinicProject/static/media/gallery5.7a8ecc66f1991de407fd.png",
@@ -48,12 +48,12 @@
     "static/media/about2.webp": "/SukamSpecialityFertilityClinicProject/static/media/about2.d59df69cbaf666fd7137.webp",
     "static/media/about3.webp": "/SukamSpecialityFertilityClinicProject/static/media/about3.e1c52f098d21d671d93b.webp",
     "index.html": "/SukamSpecialityFertilityClinicProject/index.html",
-    "main.aa99ef8d.css.map": "/SukamSpecialityFertilityClinicProject/static/css/main.aa99ef8d.css.map",
-    "main.c42e3182.js.map": "/SukamSpecialityFertilityClinicProject/static/js/main.c42e3182.js.map",
+    "main.ed1c01bb.css.map": "/SukamSpecialityFertilityClinicProject/static/css/main.ed1c01bb.css.map",
+    "main.fde26b0c.js.map": "/SukamSpecialityFertilityClinicProject/static/js/main.fde26b0c.js.map",
     "453.82e37217.chunk.js.map": "/SukamSpecialityFertilityClinicProject/static/js/453.82e37217.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa99ef8d.css",
-    "static/js/main.c42e3182.js"
+    "static/css/main.ed1c01bb.css",
+    "static/js/main.fde26b0c.js"
   ]
 }

@@ -7,7 +7,7 @@
 
 .all-blogs-title {
   font-size: 36px;
-  color: #ff4081;
+  color: #54007b;
   margin-bottom: 40px;
 }
 
@@ -56,4 +56,34 @@
 .blog-description {
   font-size: 16px;
   color: #555;
+}
+.blog-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #54007b;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #a50bed;
+  transition: width 0.3s ease;
+}
+
+.blog-link:hover {
+  color: #a21caf;
+}
+
+.blog-link:hover::after {
+  width: 100%;
 }

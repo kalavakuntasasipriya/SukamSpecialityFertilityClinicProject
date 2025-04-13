@@ -10,9 +10,7 @@
 .reviews-title {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ff5e9c, #5eb8ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #54007b;
   padding-bottom: 15px;
 }
 

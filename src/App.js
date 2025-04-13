@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CarouselComponent from "./components/CarouselComponent";
 import ExperienceSection from "./components/ExperienceSection";
@@ -29,6 +29,7 @@ import FertilityExperts from "./components/FertilityExperts";
 import HomeWelcomeBanner from "./components/HomeWelcomeBanner";
 import TabbedServicesSection from "./components/TabbedServicesSection";
 import ScrollToTop from "./ScrollToTop";
+import BlogDetails from "./components/BlogDetails";
 
 function App() {
   return (
@@ -76,6 +77,8 @@ function App() {
 
           {/* Blog Pages */}
           <Route path="/blogs" element={<AllBlogs />} />
+
+          <Route path="/blogs/:id" element={<BlogDetails />} />
 
           {/* Other Resource Pages */}
           <Route path="/FAQ" element={<FAQ />} />

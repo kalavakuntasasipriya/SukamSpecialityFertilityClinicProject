@@ -6,14 +6,13 @@
 .gallery-title {
   font-size: 2.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #ff5e9c, #5eb8ff); /* Vibrant pink to blue */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #54007b;
   margin-bottom: 15px;
   padding-bottom: 10px;
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 1.2s ease, transform 1.2s ease;
+  
 }
 
 .gallery-container.animate .gallery-title {
@@ -66,7 +65,7 @@
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: #0066ff;
+  background: #54007b;;
   color: white;
   transform: scale(1.05);
 }

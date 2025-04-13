@@ -12,7 +12,7 @@
 
 /* Space for fixed navbar to avoid overlap */
 body {
-  padding-top: 80px; /* Push body content below the fixed navbar */
+  padding-top: 60px; /* Push body content below the fixed navbar */
 }
 
 /* Flex container for navbar content */
@@ -35,7 +35,7 @@ body {
 .nav-links {
   display: flex; /* Flex layout */
   align-items: center; /* Align items vertically */
-  gap: 15px; /* Gap between links */
+  gap: 20px; /* Gap between links */
   flex-grow: 1; /* Take remaining space */
   justify-content: center; /* Center nav links */
 }
@@ -103,7 +103,7 @@ body {
 .right-section {
   display: flex;
   align-items: center;
-  gap: 10px; /* Gap between buttons */
+  gap: 30px; /* Gap between buttons */
 }
 
 /* General Button Styling */
@@ -140,7 +140,7 @@ body {
 
 /* Hover Effect for Emergency Button */
 #emergency:hover {
-  background-color: #54007b; /* Turn purple on hover */
+  background-color: rgb(220, 41, 41); /* Turn purple on hover */
   color: white;
 }
 
@@ -178,6 +178,11 @@ body {
   /* Show nav-links when menu is active (via JS class toggle) */
   .nav-links.active {
     display: flex;
+  }
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Gap between buttons */
   }
 }
 

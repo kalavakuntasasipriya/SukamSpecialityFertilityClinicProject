@@ -25,8 +25,10 @@
 
 /* Page title */
 .appointment-title {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 30px;
+  color: #54007b;
+  font-weight: bold;
 }
 
 /* Doctor cards container */
@@ -53,6 +55,7 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgb(193, 191, 191);
 }
 
 /* Hover effect */
@@ -68,11 +71,12 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  border: 1px solid grey;
 }
 
 /* Doctor Name & Info */
 .doctor-card h3 {
-  font-size: 20px;
+  font-size: 32px;
   margin: 10px 0 4px;
 }
 

@@ -9,9 +9,7 @@
   font-weight: bold;
   margin-bottom: 30px;
 
-  background: linear-gradient(135deg, #ff5e9c, #5eb8ff); /* Vibrant pink to blue */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#54007b;
 }
 
 
@@ -65,7 +63,7 @@
 }
 
 .read-more {
-  background-color:#0066ff;
+  background-color:#54007b;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -75,7 +73,7 @@
 }
 
 .read-more:hover {
-  background-color: #c2185b;
+  background-color: #fa0b6a;
 }
 
 .view-all-card {

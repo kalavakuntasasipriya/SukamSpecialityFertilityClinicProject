@@ -37,7 +37,7 @@ const Footer = () => {
     </div>
 
     <div className="footer-section">
-      <h4>Specialties</h4>
+      <h4>Treatments</h4>
       <ul>
         <li><Link to="/services/surgery">General Surgery</Link></li>
         <li><Link to="/services/pregnancy">Obstetrics & Gynaecology</Link></li>
@@ -46,7 +46,7 @@ const Footer = () => {
     </div>
 
     <div className="footer-section">
-      <h4>Insights</h4>
+      <h4>Resources</h4>
       <ul>
         <li><Link to="/blogs">Blogs</Link></li>
         <li><Link to="/gallery">Gallery</Link></li>

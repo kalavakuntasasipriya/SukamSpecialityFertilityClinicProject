@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./TabbedServicesSection.css";
-import img1 from "../assets/slide1.jpg";
-import img2 from "../assets/slide2.jpg";
-import img3 from "../assets/slide3.jpg";
+import img1 from "../assets/Website_Images-0101.jpg";
+import img2 from "../assets/Website_Images-03.jpg";
+import img3 from "../assets/Website_Images-04.jpg";
 
 const ServicesShowcase = () => {
   const navigate = useNavigate();

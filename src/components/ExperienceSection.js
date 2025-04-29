@@ -1,20 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./ExperienceSection.css";
-import doctorImg from "../assets/expertise.jpg"; // Ensure the image path is correct
+import doctorImg from "../assets/expertise.jpg"; // Update if needed
 
 const ExperienceSection = () => {
   const navigate = useNavigate();
 
-  return (
-    <section className="experience-section">
-      {/* LEFT SIDE - Image */}
-      <div className="experience-image">
-        <img src={doctorImg} alt="Expertise" />
-      </div>
+  const handleViewLocation = () => {
+    navigate("/contact");
+  };
 
-      {/* RIGHT SIDE - Text */}
-      <div className="experience-content">
+  const handleConnectNow = () => {
+    navigate("/appointment");
+  };
+
+  return (
+    <section
+      className="hero-section"
+      style={{ backgroundImage: `url(${doctorImg})` }}
+    >
+      <div className="hero-overlay">
         <h1 className="hero-title">
           Where Hope Meets Expertise
           <span className="hero-sub"> – Bangalore, India</span>
@@ -32,10 +37,10 @@ const ExperienceSection = () => {
           compassionate and effective fertility treatments.
         </p>
         <div className="hero-buttons">
-          <button className="btn blue-btn" onClick={() => navigate("/contact")}>
+          <button className="btn blue-btn" onClick={handleViewLocation}>
             View Location
           </button>
-          <button className="btn border-btn" onClick={() => navigate("/appointment")}>
+          <button className="btn border-btn" onClick={handleConnectNow}>
             Connect Now
           </button>
         </div>

@@ -40,7 +40,7 @@ import CoreValues from "./pages/CoreValues";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop />
       <Navbar />
       <div className="content-wrapper">
@@ -107,7 +107,7 @@ function App() {
       </div>
       <FloatingWhatsAppButton />
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 

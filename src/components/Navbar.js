@@ -68,7 +68,7 @@ const Navbar = () => {
     setSubDropdownOpen(null);
   }}
 >
-  <div className="dropbtn">Treatment ▾</div>
+  <div className="dropbtn">Specialties ▾</div>
   <div className={`dropdown-content ${dropdownOpen === "treatment" ? "show" : ""}`}>
     
     {/* General Surgery */}
@@ -133,7 +133,7 @@ const Navbar = () => {
             onMouseEnter={() => setDropdownOpen("resources")}
             onMouseLeave={() => setDropdownOpen(null)}
           >
-            <div className="dropbtn">Resources ▾</div>
+            <div className="dropbtn">Insights ▾</div>
             <div className={`dropdown-content ${dropdownOpen === "resources" ? "show" : ""}`}>
               <Link to="/blogs" onClick={closeMenu}>Blogs</Link>
               <Link to="/gallery" onClick={closeMenu}>Gallery</Link>

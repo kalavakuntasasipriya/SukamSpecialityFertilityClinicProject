@@ -9,7 +9,7 @@ const blogs = [
   {
     id: 1,
     image: img1,
-    title: "Understanding IVF: A Complete Guide",
+    title: "Navigating the Digital Health Resolution",
     author: "Dr. Manoj Karthik",
     date: "March 28, 2025",
   },

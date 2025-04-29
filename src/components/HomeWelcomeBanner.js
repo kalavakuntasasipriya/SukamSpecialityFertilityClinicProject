@@ -20,12 +20,10 @@ const HomeWelcomeBanner = () => {
     <section className="home-banner-section" data-aos="fade-up">
       <div className="home-banner-text">
         <h1>
-          Exceptional Care for <span>Everyone</span>
+          Expert Care with <span>Devotion</span>
         </h1>
         <p>
-        Founded with a vision to bring together clinical excellence and personalized care, our clinic is led by a dedicated team of experienced specialists who bring deep knowledge, skill, and understanding to every patient interaction. Over the years, we’ve had the privilege of walking alongside countless individuals and families on their journey to healing, motherhood, and better health.
-          
-          <em>"At Sukam, we don’t just treat conditions — we care for people."</em>
+        Patients choose Dr. Manoj Karthik S and Dr. Anitha A Manoj for their exceptional blend of clinical expertise, compassionate care, and unwavering dedication to patient well-being. With over 38 years of combined experience, they offer advanced surgical and medical solutions tailored to individual needs. Dr. Manoj is renowned for his precision in laparoscopic and general surgery, while Dr. Anitha is trusted for her personalized approach to women’s health and fertility care. Together, they provide holistic, ethical, and patient-centered treatment—ensuring comfort, clarity, and confidence at every step of the healthcare journey. Their reputation is built on trust, results, and genuine care.
         </p>
         <button
           className="appointment-btn"

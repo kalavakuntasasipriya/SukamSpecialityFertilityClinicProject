@@ -82,14 +82,6 @@ With **compassionate care and medical precision**, a precious pregnancy is nurtu
   }
 };
 
-
-
-
-
-
-
-
-
 const PregnancyTreatment = () => {
   const [selectedTopic, setSelectedTopic] = useState("Normal Pregnancy");
 
@@ -97,9 +89,26 @@ const PregnancyTreatment = () => {
     <div className="pregnancy-treatment-container">
       {/* Hero Section */}
       <div className="hero-section" style={{ backgroundImage: `url(${heroBg})` }}>
-        <h1 className="treatment-title">Pregnancy Treatment</h1>
+        <h1 className="treatment-title">General Surgery</h1>
       </div>
-
+          <div className="expert-consult-container">
+          <div className="doctor-card">
+            <img src={doctorImg} alt="Dr. Anitha A Manoj" className="doctor-img" />
+            <div className="doctor-details">
+              <h2 className="doctor-name">Dr. Anitha A Manoj</h2>
+              <p className="doctor-qualification">
+                MBBS, MS, FMAS & FRM<br />
+                Obstetrician & Gynaecologist, Fertility Specialist
+              </p>
+              <p className="doctor-experience"><strong>16+ Years of Experience</strong></p>
+              
+              {/* Add this button */}
+              <Link to="/doctor-profile/dr-anitha-a-manoj" className="consult-button">
+                Consult Now
+              </Link>
+            </div>
+          </div>
+        </div>
       {/* Advanced Pregnancy Overview Section */}
       <div className="advanced-overview-wrapper">
         {/* Left Side List */}

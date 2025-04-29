@@ -1,123 +1,81 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "./TabbedServicesSection.css";
 import img1 from "../assets/slide1.jpg";
 import img2 from "../assets/slide2.jpg";
 import img3 from "../assets/slide3.jpg";
-import img4 from "../assets/slide4.jpg";
 
-const TabbedServicesSection = () => {
+const ServicesShowcase = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(0);
 
   const services = [
     {
-      id: 1,
-      title: "Pregnancy Care",
-      description: "Comprehensive maternity support and prenatal care throughout your journey.",
-      image: img4,
-      link: "/services/pregnancy",
-      doctorId: "dr-anitha-a-manoj", // Same doctor
-    },
-    {
-      id: 2,
       title: "General Surgery",
-      description: "Safe and advanced surgical procedures with experienced surgeons.",
+      description: "Advanced surgical procedures with experienced specialists and modern equipment.",
       image: img2,
+      doctorId: "dr-manoj-karthik",
       link: "/services/surgery",
-      doctorId: "dr-manoj-karthik", // Match DoctorProfile key
+      gradient: "linear-gradient(to right, #00c6ff, #0072ff)",
+      icon: "💉", // Example icon, can replace with an actual one.
     },
     {
-      id: 3,
-      title: "Gynecology",
-      description: "Personalized care for women's health, from adolescence to menopause.",
-      image: img3,
-      link: "/services/gynecology",
-      doctorId: "dr-anitha-a-manoj", // Same doctor
-    },
-    {
-      id: 4,
-      title: "Fertility Treatments",
-      description: "Comprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert careComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needsComprehensive fertility treatments with expert care tailored to your needs tailored to your needs.",
+      title: "Obstetrics & Gynaecology",
+      description: "Holistic care for women, from adolescence to maternity and beyond.",
       image: img1,
-      link: "/services/fertility",
-      doctorId: "dr-anitha-a-manoj", // Match DoctorProfile key // Same doctor
+      doctorId: "dr-anitha-a-manoj",
+      link: "/services/pregnancy",
+      gradient: "linear-gradient(to right, #ff7e5f, #feb47b)",
+      icon: "🤰", // Example icon, can replace with an actual one.
     },
     {
-      id: 5,
-      title: "Pregnancy Care",
-      description: "Comprehensive maternity support and prenatal care throughout your journey.",
-      image: img4,
-      link: "/services/pregnancy",
-      doctorId: "dr-anitha-a-manoj", // Same doctor
+      title: "Reproductive Medicine",
+      description: "Compassionate, science-backed fertility care tailored to your journey.",
+      image: img3,
+      doctorId: "dr-anitha-a-manoj",
+      link: "/services/gynecology",
+      gradient: "linear-gradient(to right, #8e2de2, #4a00e0)",
+      icon: "👶", // Example icon, can replace with an actual one.
     },
   ];
 
-  const handlePrev = () => {
-    setActiveTab((prev) => (prev === 0 ? services.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setActiveTab((prev) => (prev === services.length - 1 ? 0 : prev + 1));
-  };
-
   return (
-    <section className="services-section-tabbed">
-      <h2>Explore More Services</h2>
-      <div className="service-tabs-wrapper">
-        <div className="service-tabs">
-          {services.map((service, index) => (
-            <button
-              key={service.id}
-              className={`service-tab ${index === activeTab ? "active" : ""}`}
-              onClick={() => setActiveTab(index)}
-            >
-              {service.title}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Card */}
-      <div className="tabbed-service-card">
-        <div className="arrow left" onClick={handlePrev}>
-          <FontAwesomeIcon icon={faChevronLeft} className="arrow-icon" />
-        </div>
-
-        <div className="card-left">
-          <div className="explore-services-image-wrapper">
-            <img
-              src={services[activeTab].image}
-              alt={services[activeTab].title}
-              className="explore-services-image"
-            />
+    <div className="showcase-section">
+      <h2 className="modern-section-title">Explore Our Services</h2>
+      <div className="showcase-grid">
+        {services.map((service, index) => (
+          <div key={index} className="showcase-card" style={{ background: service.gradient }}>
+            <div className="card-inner">
+              <div className="card-front">
+                <div className="card-img-wrapper">
+                  <img src={service.image} alt={service.title} />
+                </div>
+                <div className="card-body">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <div className="modern-buttons">
+                  <button
+  className="modern-btn primary"
+  onClick={() => navigate(service.link)}
+>
+  Explore More
+</button>
+                    <button onClick={() => navigate(`/doctor-profile/${service.doctorId}`)} className="modern-btn secondary">
+                      Find Doctor
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="card-back">
+                <div className="card-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="card-right">
-          <h3>{services[activeTab].title}</h3>
-          <p>{services[activeTab].description}</p>
-          <div className="card-buttons">
-            <a className="explore-btn" href={services[activeTab].link}>
-              Explore More
-            </a>
-            <button
-              className="find-btn"
-              onClick={() => navigate(`/doctor-profile/${services[activeTab].doctorId}`)}
-            >
-              Find Doctor
-            </button>
-          </div>
-        </div>
-
-        <div className="arrow right" onClick={handleNext}>
-          <FontAwesomeIcon icon={faChevronRight} className="arrow-icon" />
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default TabbedServicesSection;
+export default ServicesShowcase;

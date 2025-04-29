@@ -1,8 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ExperienceSection.css";
-import doctorImg from "../assets/appointment_background.jpg"; // Replace with correct path if needed
+import doctorImg from "../assets/expertise.jpg"; // Update if needed
 
 const ExperienceSection = () => {
+  const navigate = useNavigate();
+
+  const handleViewLocation = () => {
+    navigate("/contact");
+  };
+
+  const handleConnectNow = () => {
+    navigate("/appointment");
+  };
+
   return (
     <section
       className="hero-section"
@@ -26,8 +37,12 @@ const ExperienceSection = () => {
           compassionate and effective fertility treatments.
         </p>
         <div className="hero-buttons">
-          <button className="btn blue-btn">View Location</button>
-          <button className="btn border-btn">Connect Now</button>
+          <button className="btn blue-btn" onClick={handleViewLocation}>
+            View Location
+          </button>
+          <button className="btn border-btn" onClick={handleConnectNow}>
+            Connect Now
+          </button>
         </div>
       </div>
     </section>

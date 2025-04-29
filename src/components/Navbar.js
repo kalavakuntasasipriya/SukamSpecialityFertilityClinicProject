@@ -1,129 +1,187 @@
-import React, { useState } from "react"; // Import React and useState hook for state management
-import { Link, useNavigate } from "react-router-dom"; // Import Link for routing and useNavigate for navigation
-import "./Navbar.css"; // Import CSS for styling the Navbar
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 import logo from "../assets/logo.jpg";
-import { FaPhoneAlt, FaHome, FaCalendarAlt, FaFileMedicalAlt } from "react-icons/fa";
-import EmergencyModal from "./EmergencyModal"; // Import Emergency Modal component
+import { FaPhoneAlt } from "react-icons/fa";
+import EmergencyModal from "./EmergencyModal";
+import { FaHome, FaFileMedicalAlt, FaCalendarAlt } from 'react-icons/fa';
+import { useLocation } from "react-router-dom";
+
+
 
 const Navbar = () => {
-  // State to manage the open/closed state of the menu and dropdowns
-  const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [showEmergencyModal, setShowEmergencyModal] = useState(false); // State for showing/hiding the emergency modal
+  const [subDropdownOpen, setSubDropdownOpen] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showEmergencyModal, setShowEmergencyModal] = useState(false);
 
-  const navigate = useNavigate(); // Hook to programmatically navigate between pages
+  const navigate = useNavigate();
 
-  // Toggle the menu between open and closed on mobile view
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle the menu open state
-    setDropdownOpen(null); // Close any open dropdowns when the menu is toggled
+
+
+
+  const location = useLocation();
+
+  const handleHomeLinkClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      closeMenu();
+    }
   };
-
-  // Toggle dropdown visibility when a specific dropdown is clicked
-  const toggleDropdown = (dropdown) => {
-    setDropdownOpen(dropdownOpen === dropdown ? null : dropdown); // Open/close the dropdown based on the current state
-  };
-
-  // Close the menu and reset any open dropdowns
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    // Navigate to the home page
+    navigate("/");
+    // Scroll to the top of the page after navigating
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    closeMenu();
+  };
   const closeMenu = () => {
-    setMenuOpen(false); // Close the mobile menu
-    setDropdownOpen(null); // Reset the dropdown state
+    setMenuOpen(false);
+    setDropdownOpen(null);
+    setSubDropdownOpen(null);
   };
 
   return (
-    <nav className="navbar"> {/* Main Navbar container */}
+    <nav className="navbar">
       <div className="container">
-        {/* Logo Section */}
-        <Link to="/" className="logo" onClick={closeMenu}> {/* Logo linking to the homepage */}
-          <img src={logo} alt="Logo" /> {/* Display logo */}
+        <Link to="/" className="logo" onClick={handleLogoClick}>
+          <img src={logo} alt="Logo" />
         </Link>
 
-        {/* Mobile Menu Toggle Button */}
-        <button className="menu-icon" onClick={toggleMenu}>
-          {menuOpen ? "❌" : "☰"} {/* Show close icon when menu is open, otherwise show hamburger icon */}
+        <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? "❌" : "☰"}
         </button>
 
-        {/* Navigation Links - These will be shown in both mobile and desktop views */}
-        <div className={`nav-links ${menuOpen ? "active" : ""}`}> {/* Apply 'active' class when menu is open */}
-          <Link to="/" onClick={closeMenu}>Home</Link> {/* Home link */}
-          <Link to="/about" onClick={closeMenu}>About</Link> {/* About link */}
+        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <Link to="/" onClick={handleHomeLinkClick}>Home</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
 
           {/* Treatment Dropdown */}
-          <div className="dropdown">
-            <button className="dropbtn" onClick={() => toggleDropdown("treatment")}>
-              Treatment ▾ {/* Button text with dropdown arrow */}
-            </button>
-            <div className={`dropdown-content ${dropdownOpen === "treatment" ? "show" : ""}`}>
-              {/* Links for the Treatment dropdown */}
-              <Link to="/PregnancyTreatment" onClick={closeMenu}>Pregnancy</Link>
-              <Link to="/ThyroidSurgeries" onClick={closeMenu}>Thyroid Surgeries</Link>
-              <Link to="/PCODTreatment" onClick={closeMenu}>PCOD</Link>
-              <Link to="/chronic" onClick={closeMenu}>Chronic Liver Disease</Link>
-              <Link to="/uterine" onClick={closeMenu}>Uterine/Ovarian Surgeries</Link>
-              <Link to="/endoscopy" onClick={closeMenu}>Endoscopy</Link>
-              <Link to="/fertility" onClick={closeMenu}>Fertility Issues</Link>
-              <Link to="/pancreas" onClick={closeMenu}>Pancreatic Problems</Link>
-            </div>
-          </div>
+<div
+  className="dropdown"
+  onMouseEnter={() => setDropdownOpen("treatment")}
+  onMouseLeave={() => {
+    setDropdownOpen(null);
+    setSubDropdownOpen(null);
+  }}
+>
+  <div className="dropbtn">Treatment ▾</div>
+  <div className={`dropdown-content ${dropdownOpen === "treatment" ? "show" : ""}`}>
+    
+    {/* General Surgery */}
+    <div
+      className="dropdown-subsection"
+      onMouseEnter={() => setSubDropdownOpen("generalSurgery")}
+      onMouseLeave={() => setSubDropdownOpen(null)}
+    >
+      <div className="sub-btn">General Surgery</div>
+      <div className={`sub-dropdown ${subDropdownOpen === "generalSurgery" ? "show" : ""}`}>
+        <Link to="/services/surgery" onClick={closeMenu}>Hernia</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Varicose Veins</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Fatty Liver</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Piles</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Foot Ulcer Care</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Gall stones</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Neck swellings</Link>
+        <Link to="/services/surgery" onClick={closeMenu}>Testicular swellings</Link>
+      </div>
+    </div>
+
+    {/* Obstetrics & Gynaecology */}
+    <div
+      className="dropdown-subsection"
+      onMouseEnter={() => setSubDropdownOpen("obgyn")}
+      onMouseLeave={() => setSubDropdownOpen(null)}
+    >
+      <div className="sub-btn">Obstetrics & Gynaecology</div>
+      <div className={`sub-dropdown ${subDropdownOpen === "obgyn" ? "show" : ""}`}>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Pregnancy Care</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Deliveries</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Menstrual and Bleeding</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Ectopic Pregnancies</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Menopausal Care</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Family Planning</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Hysteroscopy</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Laparoscopy</Link>
+        <Link to="/services/pregnancy" onClick={closeMenu}>Uterine and Ovarian Surgeries</Link>
+      </div>
+    </div>
+
+    {/* Reproductive Medicine */}
+    <div
+      className="dropdown-subsection"
+      onMouseEnter={() => setSubDropdownOpen("reproductive")}
+      onMouseLeave={() => setSubDropdownOpen(null)}
+    >
+      <div className="sub-btn">Reproductive Medicine</div>
+      <div className={`sub-dropdown ${subDropdownOpen === "reproductive" ? "show" : ""}`}>
+        <Link to="/services/gynecology" onClick={closeMenu}>PCOD</Link>
+        <Link to="/services/gynecology" onClick={closeMenu}>Infertility Issues</Link>
+        <Link to="/services/gynecology" onClick={closeMenu}>OITI</Link>
+        <Link to="/services/gynecology" onClick={closeMenu}>IUI</Link>
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Resources Dropdown */}
-          <div className="dropdown">
-            <button className="dropbtn" onClick={() => toggleDropdown("resources")}>
-              Resources ▾ {/* Button text with dropdown arrow */}
-            </button>
+          <div
+            className="dropdown"
+            onMouseEnter={() => setDropdownOpen("resources")}
+            onMouseLeave={() => setDropdownOpen(null)}
+          >
+            <div className="dropbtn">Resources ▾</div>
             <div className={`dropdown-content ${dropdownOpen === "resources" ? "show" : ""}`}>
-              {/* Links for the Resources dropdown */}
               <Link to="/blogs" onClick={closeMenu}>Blogs</Link>
               <Link to="/gallery" onClick={closeMenu}>Gallery</Link>
               <Link to="/faq" onClick={closeMenu}>FAQ</Link>
             </div>
           </div>
 
-          <Link to="/contact" onClick={closeMenu}>Contact</Link> {/* Contact link */}
+          <Link to="/Contact" onClick={closeMenu}>Contact</Link> {/* Contact link */}
+        </div>
 
-                  {/* Right Section Buttons */}
-                  <div className="right-section">
-                    {/* Button to access lab reports */}
-                    <button className="btns" onClick={() => navigate("/access-lab-reports")}>
-                      Access Lab Reports
-                    </button>
-                    {/* Button to book an appointment */}
-                    <button className="btns" onClick={() => navigate("/appointment")}>
-                      Book an Appointment
-                    </button>
-                    {/* Button to open emergency modal */}
-                    <button className="btns" id="emergency" onClick={() => setShowEmergencyModal(true)}>
-                      <FaPhoneAlt className="text-white text-xl mr-1" /> Emergency
-                    </button>
-                  </div>
+        {/* Right Section */}
+        <div className="right-section">
+          <button className="btns" onClick={() => navigate("/access-lab-reports")}>
+            Access Lab Reports
+          </button>
+          <button className="btns" onClick={() => navigate("/appointment")}>
+            Book an Appointment
+          </button>
+          <button className="btns" id="emergency" onClick={() => setShowEmergencyModal(true)}>
+            <FaPhoneAlt className="text-white text-xl mr-1" /> Emergency
+          </button>
         </div>
       </div>
 
-      {/* Emergency Modal */}
-      {showEmergencyModal && <EmergencyModal onClose={() => setShowEmergencyModal(false)} />} {/* Show EmergencyModal if state is true */}
+      {showEmergencyModal && <EmergencyModal onClose={() => setShowEmergencyModal(false)} />}
 
 
-        {/* Mobile Bottom Navigation */}
-      <div className="bottom-mobile-nav">
-        {/* Home Button */}
-        <button onClick={() => navigate("/")}>
-          <FaHome /> Home {/* Icon for Home */}
-        </button>
-        {/* Lab Reports Button */}
-        <button onClick={() => navigate("/access-lab-reports")}>
-          <FaFileMedicalAlt /> Lab Reports {/* Icon for Lab Reports */}
-        </button>
-        {/* Appointment Booking Button */}
-        <button onClick={() => navigate("/appointment")}>
-          <FaCalendarAlt /> Book {/* Icon for Appointment Booking */}
-        </button>
-        {/* Emergency Button */}
-        <button id="emergency-bottom" onClick={() => setShowEmergencyModal(true)}>
-          <FaPhoneAlt /> Emergency {/* Icon for Emergency */}
-        </button>
-      </div>
+                {/* Mobile Bottom Navigation */}
+              <div className="bottom-mobile-nav">
+                {/* Home Button */}
+                <button onClick={() => navigate("/")}>
+                  <FaHome /> Home {/* Icon for Home */}
+                </button>
+                {/* Lab Reports Button */}
+                <button onClick={() => navigate("/access-lab-reports")}>
+                  <FaFileMedicalAlt /> Lab Reports {/* Icon for Lab Reports */}
+                </button>
+                {/* Appointment Booking Button */}
+                <button onClick={() => navigate("/appointment")}>
+                  <FaCalendarAlt /> Book {/* Icon for Appointment Booking */}
+                </button>
+                {/* Emergency Button */}
+                <button id="emergency-bottom" onClick={() => setShowEmergencyModal(true)}>
+                  <FaPhoneAlt /> Emergency {/* Icon for Emergency */}
+                </button>
+              </div>
     </nav>
   );
 };
 
-export default Navbar; // Export Navbar component for use in other parts of the application
+export default Navbar;

@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FertilityExperts.css";
-import manoj from "../assets/doctor-manoj.jpg";
-import anitha from "../assets/doctor-anitha.jpg";
+import manoj from "../assets/profile2.png";
+import anitha from "../assets/profile1.png";
 
 // Expert Data (Same IDs as in DoctorProfile.js)
 const experts = [
   {
-    id: "dr-manoj-karthik", // Must match DoctorProfile.js
+    id: "dr-manoj-karthik",
     name: "Dr. Manoj Karthik",
     qualification: "MBBS, MS (General Surgery)",
-    designation: "General Surgeon",
+    designation: "Senior General, Laparoscopic & Endoscopic Surgeon",
+    category: ["General Surgery"],
     image: manoj,
   },
   {
-    id: "dr-anitha-a-manoj", // Must match DoctorProfile.js
+    id: "dr-anitha-a-manoj",
     name: "Dr. Anitha A Manoj",
     qualification: "MBBS, MS (OBG), FMAS, FRM",
-    designation: "Senior Fertility Specialist",
+    designation: "Senior Consultant Obstetrician & Gynecologist | Fertility Specialist",
+    category: ["Obstetrics & Gynaecology", "Reproductive Medicine"],
     image: anitha,
   },
 ];
@@ -26,24 +28,19 @@ const FertilityExperts = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("All");
 
-  // Filter experts based on category tab
   const filteredExperts =
     activeTab === "All"
       ? experts
-      : experts.filter((expert) =>
-          activeTab === "General Surgeon"
-            ? expert.designation.includes("General Surgeon")
-            : expert.designation.includes("Fertility Specialist")
-        );
+      : experts.filter((expert) => expert.category.includes(activeTab));
 
   return (
     <section className="experts-section">
-      <h2 className="experts-heading">Meet Our Fertility Experts</h2>
+      <h2 className="experts-heading">Meet Our Team of Experts</h2>
       <p className="experts-subtext">Our team of specialists is here to help you.</p>
 
       {/* Category Tabs */}
       <div className="category-tabs">
-        {["All", "General Surgeon", "Fertility Specialist"].map((category) => (
+        {["All", "General Surgery", "Obstetrics & Gynaecology", "Reproductive Medicine"].map((category) => (
           <button
             key={category}
             className={`tab-button ${activeTab === category ? "active" : ""}`}
@@ -59,7 +56,7 @@ const FertilityExperts = () => {
         {filteredExperts.map((expert) => (
           <div
             key={expert.id}
-            className="expert-card"
+            className={`expert-card ${expert.id}`}
             onClick={() => navigate(`/doctor-profile/${expert.id}`)}
           >
             <div className="expert-image">

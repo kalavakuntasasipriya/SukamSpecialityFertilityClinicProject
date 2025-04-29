@@ -13,11 +13,11 @@ const Contact = () => {
         <p>Banashankari 3rd Stage, Bengaluru - 560 061</p>
 
         <div className="phone-numbers">
-          <a href="tel:+919876543210" className="phone-btn">
-            <FaPhoneAlt /> +91 98765 43210
+          <a href="tel:+91 9108108980" className="phone-btn">
+            <FaPhoneAlt /> +91 9108108980
           </a>
-          <a href="tel:+918765432109" className="phone-btn">
-            <FaPhoneAlt /> +91 87654 32109
+          <a href="tel:+91 9449628823" className="phone-btn">
+            <FaPhoneAlt /> +91 9449628823
           </a>
         </div>
       </div>

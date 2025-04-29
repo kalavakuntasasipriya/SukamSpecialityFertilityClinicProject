@@ -4,18 +4,18 @@ import "./GoogleReviews.css";
 const reviews = [
   {
     id: 1,
-    name: "Vikas Sharma",
+    name: "Priyanka V K",
     profilePic: "https://i.pravatar.cc/100?img=1",
     rating: 5,
-    text: "The professionalism at this clinic is truly effortless. The administrative processes are smooth, and the doctor's ability to blend expertise with a warm bedside manner creates an environment where patients feel valued",
+    text: "Doctor Manoj was very kind, and was helpful in answering all our questions asked. Gave us the right suggestions for the cause, Great experience for the first time and will be going for all my future needs",
     bgColor: "#FFDADA", // Light Red
   },
   {
     id: 2,
-    name: "Samad Khan",
+    name: "Pallavi Pallavi",
     profilePic: "https://i.pravatar.cc/100?img=2",
-    rating: 4,
-    text: "Finding a trustworthy healthcare partner is crucial, and this clinic and doctor exceed expectations. The consistency in delivering high-quality care fosters a sense of trust and confidence in the entire healthcare journey",
+    rating: 5,
+    text: "I had an excellent experience Dr.Anitha was incredible, professional and compassionate, making me feel cared for throughout my visit. The facilities were clean and well-maintained, and I appreciated the clear communication from my healthcare team regarding my treatment plan. I would highly recommend to anyone in need of medical care",
     bgColor: "#DFFFEF", // Light Green
   },
   {

@@ -1,15 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AppointmentPage.css";
-import manoj from "../assets/doctor-manoj.jpg";
-import anitha from "../assets/doctor-anitha.jpg";
+import manoj from "../assets/profile2.png";
+import anitha from "../assets/profile1.png";
 
 const doctors = [
   {
     id: "dr-manoj-karthik",
     name: "Dr. Manoj Karthik",
     qualification: "MBBS, MS (General Surgery)",
-    designation: "General Surgeon",
+    designation: "Senior General, Laparoscopic & Endoscopic Surgeon",
     image: manoj,
     bookLink:
       "https://www.eka.care/doctor/dr-manoj-karthik-general-surgeon-bengaluru/calendar?cid=674933ac16f48e001dd639b6&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation",
@@ -18,7 +18,7 @@ const doctors = [
     id: "dr-anitha-a-manoj",
     name: "Dr. Anitha A Manoj",
     qualification: "MBBS, MS (OBG), FMAS, FRM",
-    designation: "Senior Fertility Specialist",
+    designation: "Senior Consultant Obstetrician & Gynecologist | Fertility Specialist",
     image: anitha,
     bookLink:
       "https://www.eka.care/doctor/dr-anitha-a-manoj-obstetrics-and-gynecologist-bengaluru/calendar?cid=674933ac16f48e001dd639b6&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation",
@@ -39,12 +39,12 @@ const AppointmentPage = () => {
 
       <div className="doctor-cards">
         {doctors.map((doctor) => (
-          <div 
-            key={doctor.id} 
-            className="doctor-card"
-            onClick={() => navigate(`/doctor-profile/${doctor.id}`)} // Clicking the card opens profile
-            style={{ cursor: "pointer" }}
-          >
+            <div 
+              key={doctor.id} 
+              className={`doctor-card ${doctor.id}`} // Dynamic class
+              onClick={() => navigate(`/doctor-profile/${doctor.id}`)}
+              style={{ cursor: "pointer" }}
+            >
             <img src={doctor.image} alt={doctor.name} className="doctor-image" />
             <h3>{doctor.name}</h3>
             <p>{doctor.qualification}</p>

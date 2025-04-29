@@ -17,20 +17,13 @@
 .hero-overlay {
   padding-left: 5vw;
   padding: 30px;
-  max-width: 1000px;
-  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 800px;
   border-radius: 0 16px 16px 0;
   animation: fadeIn 3.2s ease-in-out;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Safari fallback */
   transition: all 0.4s ease;
 }
 
-.hero-overlay:hover {
-  transform: scale(1.02); /* Slight zoom */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
-}
+
 
 .hero-title {
   font-size: 2.2rem;

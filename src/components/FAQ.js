@@ -3,32 +3,27 @@ import "./FAQ.css"; // Import the CSS file
 
 const faqData = [
   {
-    question: "Where does Dr. Manoj Karthik S practice?",
+    question: "What are your clinic's consultation timings?",
     answer:
-      "Dr. Manoj Karthik S practices at Sukam Speciality Clinic - Uttarahalli, Raksha Hospital - Uttarahalli.",
+      "Our specialists are available in the evening hours. Please contact us to confirm the exact timing or to book an appointment.",
   },
   {
-    question: "What Dr. Manoj Karthik S's education qualification?",
-    answer: "Dr. Manoj Karthik S has the following qualifications - MBBS, MS - General Surgery, FMAS",
+    question: "Can I consult for a second opinion before surgery?",
+    answer: "Absolutely. Dr. Manoj Karthik S provides detailed second opinions to help you make informed decisions about any planned or suggested surgeries.",
   },
   {
-    question: "Why do patients visit Dr. Manoj Karthik S?",
-    answer: "Patients frequently visit Dr. Manoj Karthik S for Piles Surgery, Liver Surgery, Anal Fissure Surgery",
+    question: "What kind of surgical consultations do you offer?",
+    answer: "We provide expert consultations and second opinions for general, laparoscopic, and endoscopic surgical conditions such as hernia, gallbladder issues, piles, fissures, Varicose veins, thyroid & Breast surgeries, Foot ulcer care and more.",
   },
   {
-    question: "Where does Dr. Manoj Karthik S practice?",
+    question: "What services do you provide under women’s health?",
     answer:
-      "Dr. Manoj Karthik S practices at Sukam Speciality Clinic - Uttarahalli, Raksha Hospital - Uttarahalli.",
+      "We offer consultations for menstrual irregularities, PCOS, menopause, pregnancy care, and other gynaecological concerns.",
   },
   {
-    question: "What Dr. Manoj Karthik S's education qualification?",
-    answer: "Dr. Manoj Karthik S has the following qualifications - MBBS, MS - General Surgery, FMAS",
+    question: "Is ultrasound scanning available at the clinic?",
+    answer: "Yes, we offer basic scanning services as part of our diagnostic and antenatal care.",
   },
-  {
-    question: "Why do patients visit Dr. Manoj Karthik S?",
-    answer: "Patients frequently visit Dr. Manoj Karthik S for Piles Surgery, Liver Surgery, Anal Fissure Surgery",
-  },
-  
 ];
 
 const FAQ = () => {
